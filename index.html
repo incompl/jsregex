@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>jsregex</title>
+		<link rel="stylesheet" href="screen.css">
+	</head>
+	<body>
+		<div>
+			<div class="label">
+				<span class="labelRight">
+					(ignore case <input onclick="update()" type="checkbox" id="i"/>)
+					(global <input onclick="update()" type="checkbox" id="g"/>)
+					(multiline <input onclick="update()" type="checkbox" id="m"/>)
+				</span>
+				<strong>Regex:</strong>
+			</div>
+			<textarea id="regex" onkeyup="update()">[Tt]he\sr\w+</textarea>
+			
+			
+			<div class="label">
+				<span class="labelRight">
+					<a href="/web/20161005233011/http://incompl.com/">my blog</a>
+				</span>
+				<strong>Text:</strong>
+			</div>
+			<textarea id="text" onkeyup="update()">Enter your regex above.  Type some text here.  See the result below.</textarea>
+			
+			<div id="replacementContainer" style="display: none;">
+				<div class="label">
+					<strong>Replacement:</strong>
+				</div>
+				<textarea id="replacement" onkeyup="update()">the replacement</textarea>
+			</div>
+			
+			<div class="label">
+				<span class="labelRight">
+					(match <input name="match" checked="checked" onclick="update();typeChange();" value="match" type="radio"/>)
+					(replace <input id="replace" name="match" onclick="update();typeChange();" value="replace" type="radio"/>)
+				</span>
+				<strong>Result:</strong>
+			</div>
+			<textarea name="matchArea" >result goes here</textarea>
+		</div>
+		<script src="jsregex.js"></script>
+		<script>
+			resize();
+			window.onresize = resize;
+		</script>
+	</body>
+</html>
